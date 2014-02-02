@@ -3,52 +3,58 @@
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+
 
 <c:url var="submitRegistrationUrl" value="/users.html" />
 
+<spring:message var="pageTitle" code="newUserRegistration.pageTitle"/>
+<spring:message var="msgAllFieldsRequired" code="newUserRegistration.message.allFieldsRequired"/>
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
-		<title>New user registration</title>
+		<title><c:out value="${pageTitle}" /></title>
 	</head>
 	<body>
-		<h1>New user registration</h1>
+		<h1><c:out value="${pageTitle}" /></h1>
 		
 		<form:form cssClass="main" action="${submitRegistrationUrl}" modelAttribute="account">
-			<p>All fields are required.</p>
+		<p><spring:message code="newUserRegistration.message.allFieldsRequired" /></p>
+		
 			
 			<div class="panel grid">
 				<div class="gridRow yui-gf">
-					<div class="fieldLabel yui-u first">Username:</div>
+					<div class="fieldLabel yui-u first"><spring:message code="newUserRegistration.label.username" /></div>
 					<div class="yui-u">
 						<div><form:input path="username" cssClass="short" /></div>
 					</div>
 				</div>
 				<div class="gridRow yui-gf">
-					<div class="fieldLabel yui-u first">Password:</div>
+					<div class="fieldLabel yui-u first"><spring:message code="newUserRegistration.label.password" /></div>
 					<div class="yui-u">
 						<div><form:password path="password" showPassword="false" cssClass="short" /></div>
 					</div>
 				</div>
 				<div class="gridRow yui-gf">
-					<div class="fieldLabel yui-u first">Confirm password:</div>
+					<div class="fieldLabel yui-u first"><spring:message code="newUserRegistration.label.confirmPassword" /></div>
 					<div class="yui-u">
 						<div><form:password path="confirmPassword" showPassword="false" cssClass="short" /></div>
 					</div>
 				</div>
 				<div class="gridRow yui-gf">
-					<div class="fieldLabel yui-u first">First name:</div>
+					<div class="fieldLabel yui-u first"><spring:message code="newUserRegistration.label.firstName" /></div>
 					<div class="yui-u">
 						<div><form:input path="firstName" cssClass="short" /></div>
 					</div>
 				</div>
 				<div class="gridRow yui-gf">
-					<div class="fieldLabel yui-u first">Last name:</div>
+					<div class="fieldLabel yui-u first"><spring:message code="newUserRegistration.label.lastName" /></div>
 					<div class="yui-u">
 						<div><form:input path="lastName" cssClass="short" /></div>
 					</div>
 				</div>
 				<div class="gridRow yui-gf">
-					<div class="fieldLabel yui-u first">E-mail address:</div>
+					<div class="fieldLabel yui-u first"><spring:message code="newUserRegistration.label.email" /></div>
 					<div class="yui-u">
 						<div><form:input path="email" cssClass="medium" /></div>
 					</div>
@@ -57,7 +63,7 @@
 					<div class="yui-u first"></div>
 					<div class="yui-u">
 						<form:checkbox id="marketingOk" path="marketingOk" />
-						<label for="marketingOk">Please send me product updates by e-mail. I can unsubscribe at any time.</label>
+						<label for="marketingOk"><spring:message code="newUserRegistration.label.marketingOk" /></label>
 					</div>
 				</div>
 				<div class="gridRow yui-gf">
@@ -65,19 +71,19 @@
 					<div class="yui-u">
 						<div>
 							<form:checkbox id="acceptTerms" path="acceptTerms" />
-							<label for="acceptTerms">I accept the <a href="#">terms of use</a>.</label>
+							<label for="acceptTerms"><spring:message code="newUserRegistration.label.acceptTerms" />.</label>
 						</div>
 					</div>
 				</div>
 				<div class="gridRow yui-gf">
 					<div class="yui-u first"></div>
 					<div class="yui-u">
-						Please see our <a href="#">privacy policy</a>.
+						<spring:message code="newUserRegistration.label.privacyPolicy" />
 					</div>
 				</div>
 				<div class="gridRow yui-gf">
 					<div class="yui-u first"></div>
-					<div class="yui-u"><input type="submit" value="Register"></input></div>
+					<div class="yui-u"><input type="submit" value="${register}"></input></div>
 				</div>
 			</div>
 		</form:form>
