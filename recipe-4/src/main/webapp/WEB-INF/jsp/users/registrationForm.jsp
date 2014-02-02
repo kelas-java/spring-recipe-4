@@ -10,6 +10,8 @@
 
 <spring:message var="pageTitle" code="newUserRegistration.pageTitle"/>
 <spring:message var="msgAllFieldsRequired" code="newUserRegistration.message.allFieldsRequired"/>
+<spring:message var="register" code="newUserRegistration.label.register" />
+
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>

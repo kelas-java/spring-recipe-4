@@ -1,18 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!--
-========================================================================================================================
-beans-web.xml
 
-Copyright (c) 2013 Manning Publications Co.
-
-Willie Wheeler (willie.wheeler@gmail.com)
-
-Book: http://manning.com/wheeler/
-Blog: http://springinpractice.com/
-Code: https://github.com/springinpractice
-========================================================================================================================
--->
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:p="http://www.springframework.org/schema/p"
@@ -31,7 +19,7 @@ Code: https://github.com/springinpractice
 	<mvc:view-controller path="/home.html" view-name="extras/home" />
 	<mvc:view-controller path="/users/registration_ok.html" view-name="users/registrationOk" />
 	
-	<context:component-scan base-package="com.springinpractice.ch04.web" />
+	<context:component-scan base-package="net.ruangtedy.java.spring.ch04.web"/>
 	
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"
 		p:viewClass="org.springframework.web.servlet.view.JstlView"
@@ -40,5 +28,5 @@ Code: https://github.com/springinpractice
 	
 	<bean id="messageSource"
 		class="org.springframework.context.support.ReloadableResourceBundleMessageSource"
-		p:basename="classpath:/spring/messages.properties" />
+		p:basename="classpath:/spring/messages" />
 </beans>
